@@ -5,7 +5,7 @@
 Ukoliko ste na Linux sustavu Git je preinstaliran i može se odmah koristiti.
 Na Mac i Windows sustavima Git je potrebno  instalirati. Za Windows OS vidjeti
 stranicu  https://gitforwindows.org/, a za Mac OS stranicu https://git-scm.com/.
-U slučaju problema s instalacijom postoje brojni resursi na web-u koji nude
+U slučaju problema postoje brojni resursi na web-u koji nude
 pomoć pri instalaciji Git-a.
 
 ## Priprema za rad sa Git-om
@@ -17,7 +17,7 @@ git naredba [opcije]
 ```
 Prije samog rada s Git-om potrebno je izvršiti konfiguraciju Git-a koja se
 sastoji u tome da se postavi korisničko ime i email adresa.
-U radu s GitHub-om je važno da se postavi email adresa koja je dana GitHub-u
+U radu s GitHub-om važno je postaviti email adresu koja je dana GitHub-u
 prilikom kreiranja računa.
 
 Naredbe koje treba iskoristiti su sljedeće:
@@ -59,13 +59,13 @@ git status
 naredbom.
 
 Git prati datoteke koje su mu dane i pamti svaku njihovu izmjenu koja je predana
-repozitoriju. Ako su neke izmjene koje su napravljene u repozitoriju dovele do
+repozitoriju. Ako su neke izmjene napravljene u repozitoriju dovele do
 grešaka uvijek je moguće vratiti se na prethodnu verziju repozitorija. Git će
 zapamtiti čitavu povijest repozitorija.
 
 Git pamti promjene samo onih datoteka koje mu damo sa `git add` naredbom. Druge
 datoteke u direktoriju ignorira. Recimo da smo u našem direktoriju (Zadatak67)
-kreirali datoteki `CMakeLists.txt`. Kako bi je Git počeo pratiti moramo
+kreirali datoteku `CMakeLists.txt`. Kako bi je Git počeo pratiti moramo
 izvršiti naredbu
 ```bash
 git add CMakeLists.txt
@@ -74,7 +74,7 @@ Uključivanje datoteke u Git repozitorij sastoji se od dva koraka. Pomoću nared
 `git add` datoteka se uključuje u indeks (češći naziv je _staging area_).
 U drugom koraku potrebno je pozvati `git commit` naredbu koja sve datoteke iz
 indeksa prebacuje u repozitorij i kreira novu trenutnu sliku čitavog radnog
-direktorija u repozitoriju. Nakon poziva Naredbe
+direktorija u repozitoriju. Nakon poziva naredbe
 ```bash
 git commit
 ```
@@ -91,15 +91,15 @@ U direktoriju u kojem razvijamo kod kreiramo Git repozitorij sa `git init` nared
 Svaku datoteku koju želimo pratiti u repozitoriju dodajemo sa `git add` naredbom.
 Obično u svakom direktoriju ima i trenutnih i pomoćnih datoteka koje ne želimo
 pamtiti u repozitoriju. To se prije svega odnosi na sve  datoteke generirane pomoću
-prevodioca ili drugih alata; njih nikada ne dodajemo s `git add` naredbom.
+prevodioca ili drugih alata; njih nikada ne dodajemo sa `git add` naredbom.
 
 Ako smo jednu datoteku dodali u indeks sa `git add` naredbom i zatim je izmjenili,
-nove izmjene nisu registrirane u indekse sve dok ju ponovo ne dodamo u indeks
+nove izmjene nisu registrirane u indeksu sve dok ju ponovo ne dodamo u indeks
 sa `git add` naredbom.
 
 Kada smo sa grupom izmjena datoteka zadovoljni dodajemo te izmjene u repozitorij
 sa  `git commit` naredbom. Ono što je repozitoriju dodano sa  `git commit` predstavlja
-jednu fazu u razvoju softvera. Svaki spremanje u repozitorij (_commit_)
+jednu fazu u razvoju softvera. Svako spremanje u repozitorij (svaki _commit_)
 dobiva svoj identifikator i predstavlja jednu točku u povijesti razvoja koda na
 koju se možemo vratiti.
 
@@ -108,7 +108,7 @@ Osnovni ciklus rada sa repozitorijem je sljedeći:
 1. Mijenjamo datoteke u radnom direktoriju;
 2. Dodajemo izmjene u indeks (`git add`). Iteriramo 1 -> 2  sve dok nismo zadovoljni s izmjenama.
 3. Ubacujemo izmjene iz indeksa u repozitorij (`git commit`). Vraćamo se na 1 sve dok
-zadatak nije gotov.
+zadatak (projekt) nije gotov.
 
 Pomoću `git status` naredbe možemo vidjeti koje datoteke nisu u indeksu, koje jesu
 ali su u međuvremenu izmijenjene i na osnovu toga znamo koju operaciju treba izvršiti.
@@ -118,7 +118,7 @@ ali su u međuvremenu izmijenjene i na osnovu toga znamo koju operaciju treba iz
 
 Projekt često započinjemo kloniranjem već postoječeg Git repozitorija. To će biti slučaj sa zadacima
 u ovom kolegiju. Zadatak s početnim kodom bit će postavljen kao Git repozitorij na
-GitHub servisu. Repozitorj treba klonirati na lokalnu mašinu, doraditi kod u repozitoriju
+GitHub servisu. Repozitorij treba klonirati na lokalnu mašinu, doraditi kod u repozitoriju
 prema danim uputama i gurnuti izmjene u GitHub repozitorij.
 
 Kloniranje repozitorija se radi sa `git clone` naredbom koja kao opciju uzima URL repozitorija
@@ -132,7 +132,7 @@ dodatni argument. Naredba
 ```bash
 git clone https://github.com/PMF-MO-OPCPP/Git myGit
 ```
-kreirati lokalni direktorij `myGit` i u njega povući cijeli sadržaj repozitorija.
+kreirati lokalni direktorij `myGit` i u njega povlači cijeli sadržaj repozitorija.
 
 Rad sa repozitorijem je posve isti kao i kada repozitorij kreiramo lokalno sa `git init`
 naredbom. Modificiramo datoteke, koristimo `git add` naredbu za prijavljivanje izmjena
@@ -147,12 +147,12 @@ koristimo naredbu
 ```bash
 git push origin master
 ```
-Analogna naredba postoji za povlačenje izmjena u udaljenom repozitoriju na lokalni
+Analogna naredba postoji za povlačenje izmjena sa udaljenog repozitorija u lokalni
 repozitorij:
 ```bash
 git pull origin master
 ```
-U ovim naredbama `origin` je kratki naziv za udaljeni repozitorij. Naredba
+U ovim naredbama `origin` je kratak naziv za udaljeni repozitorij. Naredba
 ```bash
 git remote -v
 ```
@@ -163,14 +163,14 @@ dok `master` grana ostaje netaknuta sve dok izmjene u novoj grani nisu potpune. 
 uključuju u `master` granu (to je proces koji se naziva `merge`). Mi grane nećemo koristiti
 tako da će jedina grana uvijek biti `master`.
 
-**Napomena:** `git pull` naredba povlači izmjene s udaljenog repozitorija lokalno i vrši uključivanje
-izmjena u lokalni repozitorij. U tom koraku može doći do **konflikta** između lokalnih izmjena
+**Napomena:** `git pull` naredba povlači izmjene iz udaljenog repozitorija u lokalni i vrši uključivanje
+izmjena u lokalni repozitorij (_merge_). U tom koraku može doći do **konflikta** između lokalnih izmjena
 i izmjena u udaljenom repozitoriju koje se moraju rješavati _ručno_.
 
 
 ## GitHub Classroom
 
-Za distribuciju zadataka na ovom kolegiju  koristimo _GitHub Classroom_ servis. Classroom   funkcionira
+Za distribuciju zadataka u ovom kolegiju  koristimo _GitHub Classroom_ servis. Classroom   funkcionira
 tako što nastavnik putem email poruke šalje studentima URL repozitorija koji trebaju klonirati.
 Studenti trebaju slijediti dobiveni URL pri čemu Classroom za njih kreira privatni repozitorij
 sa zadatkom. Na tom privatnom repozitoriju student ima pravo koristiti `pull` i `push` naredbe (koristeći
@@ -179,4 +179,4 @@ sa zadatkom. Na tom privatnom repozitoriju student ima pravo koristiti `pull` i 
 **Važna napomena.** Pri rješavanju zadataka potrebno je `git push`  naredbu izvršiti barem dva puta: u sredini
 procesa rješavanja i na kraju kada je zadatak riješen. Veći broj `push`-ova u udaljeni repozitorij
 je dobrodošao. Ovo je nužno kako bi se spriječilo da se tuđe rješenje jednostavno gurne u GitHub Classroom
-repozitorij. Zadaci koji su spremljeni sa samo jednom `git push` naredbom se neće uzimati u obzir. 
+repozitorij. Zadaci koji su spremljeni sa samo jednom `git push` naredbom  neće se uzimati u obzir! 

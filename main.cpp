@@ -5,10 +5,13 @@ using namespace std;
 
 int main()
 {
+   int x =0;
+   int y(0);
+   int z{0};
    vector<int> vec{10, 3};
 
-   for(unsigned int i = 0; i < vec.size(); ++i)
-         cout << vec[i] << ",";
+   for(auto x : vec)
+         cout << x << ",";
     cout << "\n";
     std::cout << "Hello world!\n";
 

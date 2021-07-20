@@ -181,14 +181,15 @@ procesa rješavanja i na kraju kada je zadatak riješen. Veći broj `push`-ova u
 je dobrodošao. Ovo je nužno kako bi se spriječilo da se tuđe rješenje jednostavno gurne u GitHub Classroom
 repozitorij. Zadaci koji su spremljeni sa samo jednom `git push` naredbom  neće se uzimati u obzir! 
 
+**NOTE:** Submodul više ne koristimo za Google test.
 
 ## Submodul
 
-Za testiranje koda koristit ćemo _Google Test_ biblioteku (*googletest*)  otvorenog koda koja se nalazi na GitHub-u na adresi
-https://github.com/google/googletest. Biblioteku bismo mogli instalirati na lokalnom računalu i naše programe 
-povezati s njom za vrijeme izgradnje programa. Mi ćemo iskoristiti drugi pristup koji je moguć stoga
-što  *googletest* ima javno dostupan Git repozitorij, a sastoji se u tome da *gtest* učitamo u naš Git projekt kao **submodule**.
+Ako naš program ovisi o biblioteci koja ima javno dostupan Git repozitorij, onda ju možemo uključiti
+u naš Git projekt kao **submodule**.
 *Submodule* je Git repozitorij koji se nalazi u jednom direktoriju unutar nekog drugog Git repozitorija. 
+Prednost takvog uključivanja je u tome što će biblioteka koju koristimo biti kompilirana s istim
+opcijama kao i naš program/biblioteka i bit će vezan s istim verzijama  drugih eventualno potrebnih biblioteka.
 
 
 Submodul se kreira pozivom naredbe `git submodule add` koja uzima URL repozitorija koji želimo preuzeti
@@ -211,7 +212,7 @@ Kada gurnemo lokalni repozitorij sa submodulom u udaljeni repozitorij sam submod
 će biti kopiran samo prazan direktorij submodula (ovdje `/external/googletest`) i datoteka `.gitmodules`.
 Isto se dešava kada kloniramo repozitorij sa submodulom.
 
-Ako smo klonirali repozitorij sa submodulom (što će biti naš slučaj sa zadacima) onda prije rada na repozitoriju 
+Ako smo klonirali repozitorij sa submodulom onda prije rada na repozitoriju 
 i kompilacije treba pozvati sljedeće dvije naredbe:
 
 ```

@@ -163,6 +163,10 @@ dok `master` grana ostaje netaknuta sve dok izmjene u novoj grani nisu potpune. 
 uključuju u `master` granu (to je proces koji se naziva `merge`). Mi grane nećemo koristiti
 tako da će jedina grana uvijek biti `master`.
 
+**Napomena**. GitHub je promijenio svoju politiku nazivanja glavne grane i sada umjesti `master` koristi 
+naziv `main`.
+
+
 **Napomena:** `git pull` naredba povlači izmjene iz udaljenog repozitorija u lokalni i vrši uključivanje
 izmjena u lokalni repozitorij (_merge_). U tom koraku može doći do **konflikta** između lokalnih izmjena
 i izmjena u udaljenom repozitoriju koje se moraju rješavati _ručno_.

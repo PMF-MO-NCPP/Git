@@ -132,7 +132,7 @@ dodatni argument. Naredba
 ```bash
 git clone https://github.com/PMF-MO-OPCPP/Git myGit
 ```
-kreirati lokalni direktorij `myGit` i u njega povlači cijeli sadržaj repozitorija.
+će kreirati lokalni direktorij `myGit` i u njega povlači cijeli sadržaj repozitorija.
 
 Rad sa repozitorijem je posve isti kao i kada repozitorij kreiramo lokalno sa `git init`
 naredbom. Modificiramo datoteke, koristimo `git add` naredbu za prijavljivanje izmjena
@@ -164,7 +164,9 @@ uključuju u `master` granu (to je proces koji se naziva `merge`). Mi grane neć
 tako da će jedina grana uvijek biti `master`.
 
 **Napomena**. GitHub je promijenio svoju politiku nazivanja glavne grane i sada umjesti `master` koristi 
-naziv `main`.
+naziv `main`. To znači da se u nekim repozitorijima glavna grana na ziva `master`, a u nekima `main`. 
+Ime grane ne moramo znati jer git naredbe dozvoljavaju nadopunjavanje imena tabulatorom. Dovoljno je 
+otipkati `m` i stisnuti Tab tipku i ime grane će biti nadopumjeno (`pull origin m Tab`).
 
 
 **Napomena:** `git pull` naredba povlači izmjene iz udaljenog repozitorija u lokalni i vrši uključivanje

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(Git CXX)
+project(Git LANGUAGES CXX)
 add_executable("gitmain" main.cpp)
 
 set_target_properties(gitmain
